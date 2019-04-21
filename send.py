@@ -32,5 +32,6 @@ try:
     mail.sendmail(my_email, to_email, text)
     mail.close()
     print("E-mail sended")
-except:
+except Exception as e:
+    print(e)
     print("Couldnt send")

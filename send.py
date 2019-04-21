@@ -15,10 +15,10 @@ try:
     msg = MIMEMultipart()
     msg['From'] = my_email
     msg['To'] = to_email
-    msg['Subject'] = r"Archives\April20.png"
+    msg['Subject'] = r"Charts\April20.png"
     body = "chart - "
     msg.attach(MIMEText(body, 'plain'))
-    filename = "Archives\April20" + suffix
+    filename = "Charts\April20" + suffix
     attachment = open(filename, 'rb')
     part = MIMEBase('application', 'octet-stream')
     part.set_payload((attachment).read())

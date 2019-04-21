@@ -11,14 +11,14 @@ password = "dvdromkamek1"
 mail = smtplib.SMTP('smtp.gmail.com', 587)
 suffix = ".png"
 
-def em(name):
+try:
     msg = MIMEMultipart()
     msg['From'] = my_email
     msg['To'] = to_email
-    msg['Subject'] = name
+    msg['Subject'] = r"Archives\April20.png"
     body = "chart - " + name
     msg.attach(MIMEText(body, 'plain'))
-    filename = name + suffix
+    filename = "Archives\April20" + suffix
     attachment = open(filename, 'rb')
     part = MIMEBase('application', 'octet-stream')
     part.set_payload((attachment).read())
@@ -31,4 +31,6 @@ def em(name):
     mail.login(my_email, password)
     mail.sendmail(my_email, to_email, text)
     mail.close()
-print("E-mail sended")
+    print("E-mail sended")
+except:
+    print("Couldnt send")

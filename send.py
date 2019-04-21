@@ -16,7 +16,7 @@ try:
     msg['From'] = my_email
     msg['To'] = to_email
     msg['Subject'] = r"Archives\April20.png"
-    body = "chart - " + name
+    body = "chart - "
     msg.attach(MIMEText(body, 'plain'))
     filename = "Archives\April20" + suffix
     attachment = open(filename, 'rb')
